@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5 Day Forecast</title>
+    <!--fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!--title-->
+        <h1>5 Day Forecast for {{ weather[0].city }}</h1>
+        <!-- forecast display -->
+        <div class="forecast">
+            {% for day in weather %}
+            <div class="weather-box">
+                <h3>{{ day.date }}</h3>
+                <img src="http://openweathermap.org/img/wn/{{ day.icon }}@2x.png" alt="icon">
+                <p>{{ day.temp }}°F</p>
+                <p>{{ day.desc }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- save -->
+        <form method="POST" action="/save_all">
+            <input type="hidden" name="forecast" value='{{ weather | tojson }}'>
+            <button type="submit">Save Forecast</button>
+        </form>
+
+        <!-- navigate -->
+        <a href="/"><button>Back to Home</button></a>
+        <a href="/saved"><button>View Saved Entries</button></a>
+
+        <!-- youtube links -->
+        <h2 style="margin-top: 40px;">Things to Do in {{ weather[0].city }} (YouTube)</h2>
+        <div class="youtube-videos">
+            {% for video in videos %}
+            <div class="video-card">
+                <a href="https://www.youtube.com/watch?v={{ video.video_id }}" target="_blank">
+                    <img src="{{ video.thumbnail }}" alt="{{ video.title }}">
+                    <p>{{ video.title }}</p>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

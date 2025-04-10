@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Forecasts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Saved Forecast Entries</h1>
+
+        <div class="saved-entries">
+            {% for entry in entries %}
+            <div class="weather-box saved-box">
+                <h3>{{ entry.city }}</h3>
+                <p>
+                    {% for date, temp, desc in entry.forecasts %}
+                        <strong>{{ date }}:</strong> {{ temp }}°F, {{ desc }}<br>
+                    {% endfor %}
+                </p>
+
+                <!-- edit -->
+                <form method="GET" action="/edit/{{ entry.forecast_id }}">
+                    <button type="submit">Edit Forecast</button>
+                </form>
+
+                <!-- delete -->
+                <form method="POST" action="/delete/{{ entry.forecast_id }}">
+                    <button type="submit" onclick="return confirm('Are you sure you want to delete this forecast?');">
+                        Delete Forecast
+                    </button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Export Buttons -->
+        <div style="margin-top: 30px;">
+            <h3>Export Saved Forecasts:</h3>
+            <a href="/export/json"><button>Export as JSON</button></a>
+            <a href="/export/csv"><button>Export as CSV</button></a>
+            <a href="/export/pdf"><button>Export as PDF</button></a>
+        </div>
+
+        <a href="/"><button style="margin-top: 20px;">Back to Home</button></a>
+    </div>
+</body>
+</html>

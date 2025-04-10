@@ -1,0 +1,130 @@
+body {
+    font-family: 'Chewy', sans-serif;
+    background: #e0f7ff;
+    color: #000000;
+    text-align: center;
+    padding: 20px;
+    overflow: visible; 
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+/* input and button style */
+input, button {
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+}
+
+button {
+    background-color: #4db8ff;
+    color: white;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+}
+
+button:hover {
+    background-color: #3399ff;
+}
+
+/* forecast */
+.forecast {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nwrap;
+    gap: 15px;
+    margin-top: 20px;
+    padding-bottom: 20px; 
+    overflow-x: visible;
+}
+
+/* weather box */
+.weather-box {
+    background: #cceeff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px; 
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.weather-box label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.weather-box input[type="text"],
+.weather-box input[type="number"] {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+    box-sizing: border-box;
+}
+
+.weather-box img {
+    width: 80px;
+}
+
+/* saved */
+.saved-entries {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.saved-box {
+    width: 300px;
+    background: #f0faff;
+}
+
+/* youtube videos */
+.youtube-videos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.video-card {
+    width: 250px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: left;
+}
+
+.video-card img {
+    width: 100%;
+    display: block;
+}
+
+.video-card p {
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+/*center */
+.weather-box,
+.video-card {
+    text-align: center;
+}

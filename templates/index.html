@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>5 Day Weather Forecast</h1>
+        <form method="POST">
+            <input type="text" name="city" placeholder="Enter city, ZIP, landmark, or coordinates" required>
+            <button type="submit">Get Weather</button>
+            <!-- search -->
+            <button type="button" onclick="getCurrentLocation()">Use My Location</button>
+        </form>
+        <!-- error -->
+        {% if error %}
+            <p style="color:red;">{{ error }}</p>
+        {% endif %}
+        <!-- navigate -->
+        <a href="/saved"><button>View Saved Entries</button></a>
+    </div>
+
+    <!-- about -->
+    <footer style="margin-top: 100px; padding: 20px; background-color: rgb(255, 255, 255); text-align: center; font-family: Nunito, sans-serif; font-size: 14px;">
+        <p><strong>Developer:</strong> Sanskriti Malakar</p>
+        <p><strong>About PM Accelerator:</strong> PM Accelerator offers hands-on Product Management training with real-world experience and mentorship from top tech PMs, helping aspiring product managers launch and succeed in their careers.</p>
+        <p><a href="https://www.linkedin.com/school/pmaccelerator/" target="_blank">Learn more on LinkedIn</a></p>
+    </footer>
+
+    <!-- geolocation -->
+    <script>
+    function getCurrentLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                window.location.href = `/current_weather?lat=${lat}&lon=${lon}`;
+            }, function(error) {
+                alert("Could not get location: " + error.message);
+            });
+        } else {
+            alert("Geolocation not supported by your browser.");
+        }
+    }
+    </script>
+</body>
+</html>

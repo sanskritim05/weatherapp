@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Saved Weather Logs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="container">
+
+  <h1 class="mb-4">Saved Weather Logs</h1>
+
+  {% for entry in entries %}
+  <div class="weather-card">
+    <h2>{{ entry[1] }}</h2> <!-- entry[1] is the city -->
+    <p>{{ entry[2] }}°F</p> <!-- entry[2] is the temperature -->
+    <p><small>Saved at: {{ entry[3] }}</small></p> <!-- entry[3] is the description -->
+    <button 
+      onclick="deleteLog({{ entry[0] | tojson }})" 
+      class="btn btn-danger" 
+      {% if entry[0] is not defined %}disabled{% endif %}>
+      Delete
+</button>
+
+  </div>
+  {% endfor %}
+
+  <!-- Action buttons at the bottom -->
+  <div id="action-buttons" class="d-flex justify-content-center mt-5 fixed-bottom">
+    <button class="btn btn-primary mx-2" onclick="window.location.href='/'">Get Weather</button>
+    <a href="/entries" class="btn btn-info mx-2">View Saved Logs</a>
+    <button class="btn btn-success mx-2" onclick="saveWeather()">Save This Weather</button>
+  </div>
+
+  <a href="/" class="back">← Back to Home</a>
+
+  <script>
+    // JavaScript for handling deletion
+    async function deleteLog(id) {
+      const confirmed = confirm("Are you sure you want to delete this entry?");
+      if (!confirmed) return;
+
+      const res = await fetch(`/delete/${id}`, { method: 'DELETE' });
+      const result = await res.json();
+
+      if (result.message) {
+        alert("Deleted!");
+        location.reload();
+      } else {
+        alert("Something went wrong.");
+      }
+    }
+
+    // Placeholder function for Save Weather
+    async function saveWeather() {
+      alert("Weather data saved!");
+    }
+  </script>
+
+</body>
+</html>
