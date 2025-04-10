@@ -1,2 +1,4 @@
 # ignore all .a files
 *__pycache__/
+.DS_Store
+*.pdf
