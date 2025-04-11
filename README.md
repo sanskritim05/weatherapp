@@ -4,7 +4,7 @@ This is a full-stack weather app built for the AI/ML/Gen AI Engineer Intern Tech
 
 The app lets users search for weather by entering a location (like a city, zip code, or coordinates), view real-time weather and a 5-day forecast, save and manage past searches, and even watch related YouTube videos. It also supports exporting saved data in different formats.
 
-Demo Video: [https://youtu.be/f-WPwlL3Nk0](url)
+Demo Video: [https://youtu.be/f-WPwlL3Nk0]([url](https://youtu.be/f-WPwlL3Nk0))
 
 Core Functionality
     Search by: City, Zip Code, GPS Coordinates, Landmarks, etc.
