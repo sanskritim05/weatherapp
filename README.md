@@ -30,7 +30,8 @@ The app lets users search for weather by entering a location (like a city, zip c
 * static/ – Contains static frontend assets: CSS, JavaScript, and icons.
 * requirements.txt – Lists all required Python libraries and dependencies.
 
-## How to run:
-    1. Clone the github repo
-    2. install the required python packages from the requirements.txt file. like 
-    3. Open browser window and use address http://localhost:5000/
+## How to test the Weather App:
+    1. Clone the github repo.
+    2. Open the cloned app in Visal Studio Code or any other editor.
+    3. Install the required python packages from the requirements.txt file. like python -m pip install -r .\requirements.txt
+    4. Open browser window and use address http://localhost:5000/
