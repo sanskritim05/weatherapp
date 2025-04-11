@@ -14,21 +14,21 @@ Core Functionality
 * Error Handling: User-friendly messages for invalid input or API failures.
 
 CRUD Operations
-    Create: Save weather info based on user-defined location and date range.
-    Read: View all previously saved weather records.
-    Update: Edit saved forecast details (e.g., description or temperature).
-    Delete: Remove stored weather records.
+* Create: Save weather info based on user-defined location and date range.
+* Read: View all previously saved weather records.
+* Update: Edit saved forecast details (e.g., description or temperature).
+* Delete: Remove stored weather records.
 
 
 File Structure & Descriptions
-    app.py – Main Flask app. Routes user requests and connects all modules (weather, YouTube, database, export).
-    db.py – Handles database operations: create, read, update, delete weather entries.
-    weather.py – Communicates with the OpenWeatherMap API to retrieve current and forecast data.
-    youtube.py – Integrates the YouTube Data API to fetch location-based travel/weather videos.
-    export.py – Supports export of weather data in JSON, CSV, XML, PDF, and Markdown formats.
-    templates/ – HTML templates for rendering views (home, results, errors).
-    static/ – Contains static frontend assets: CSS, JavaScript, and icons.
-    requirements.txt – Lists all required Python libraries and dependencies.
+* app.py – Main Flask app. Routes user requests and connects all modules (weather, YouTube, database, export).
+* db.py – Handles database operations: create, read, update, delete weather entries.
+* weather.py – Communicates with the OpenWeatherMap API to retrieve current and forecast data.
+* youtube.py – Integrates the YouTube Data API to fetch location-based travel/weather videos.
+* export.py – Supports export of weather data in JSON, CSV, XML, PDF, and Markdown formats.
+* templates/ – HTML templates for rendering views (home, results, errors).
+* static/ – Contains static frontend assets: CSS, JavaScript, and icons.
+* requirements.txt – Lists all required Python libraries and dependencies.
 
 How to run:
     1. Clone the github repo
