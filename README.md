@@ -34,8 +34,6 @@ The app lets users search for weather by entering a location (like a city, zip c
 * To clone the App, Open Visual Studio Code or any other editor and then clone the Weather App repo, use command git clone https://github.com/sanskritim05/weatherapp.git.
 * Chane the directory to go to WeatherApp
     cd .\weatherapp\
-* Install the required python packages from the requirements.txt file. 
-    like > python -m pip install -r .\requirements.txt
-* Run Weather App by writing python3 app.py in the terminal. 
-    > python3 app.py
+* Install the required python packages from the requirements.txt file. like > python -m pip install -r .\requirements.txt
+* Run Weather App by writing python3 app.py in the terminal. > python3 app.py
 * Open browser window and use address http://localhost:5000/
