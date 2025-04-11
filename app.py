@@ -4,9 +4,6 @@ import sqlite3
 import json
 from datetime import datetime
 import uuid
-import csv
-from io import StringIO, BytesIO
-from fpdf import FPDF  
 import re
 import youtube
 import db
@@ -194,7 +191,7 @@ def saved():
     for f_id, data in grouped.items():
         data["forecasts"] = sorted(data["forecasts"], key=lambda x: datetime.strptime(x[0], "%B %d, %Y"))
 
-    entries = [{"forecast_id": f_id, "city": data["city"], "forecasts": data["forecasts"]} for fid, data in grouped.items()]
+    entries = [{"forecast_id": f_id, "city": data["city"], "forecasts": data["forecasts"]} for f_id, data in grouped.items()]
 
     return render_template("saved.html", entries=entries)
 
