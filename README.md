@@ -37,6 +37,9 @@ The app lets users search for weather by entering a location (like a city, zip c
     > cd .\weatherapp\
 * Install the required python packages from the requirements.txt file. like
     > python -m pip install -r .\requirements.txt
+* Update app.py and youtube.py with your own API keys.
+    > **OpenWeather API Key**: Sign up at [OpenWeather](https://openweathermap.org/api) and generate your key.
+    > **YouTube API Key**: Enable the YouTube Data API v3 on [Google Cloud Console](https://console.cloud.google.com/), and create an API key.
 * Run Weather App by writing python3 app.py in the terminal.
     > python3 app.py
 * Open browser window and use address http://localhost:5000/
