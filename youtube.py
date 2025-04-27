@@ -2,7 +2,8 @@
 import requests
 
 # API keys
-YOUTUBE_API_KEY = "AIzaSyDPzf6aVUsctPVG0JktI72XQNi0Ue3tbMg"
+YOUTUBE_API_KEY = "" # use your own API Key from YouTube
+
 
 # youtube video fetching
 def get_youtube_videos(city):

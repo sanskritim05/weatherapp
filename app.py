@@ -9,7 +9,7 @@ import youtube
 import db
 import fileExport
 # API keys
-API_KEY = "a35bc7a09d1bb0720255be3bc9d4ac5d"
+API_KEY = "" # use your own Weather API Key from OpenWeather
 
 # flask app
 app = Flask(__name__)
